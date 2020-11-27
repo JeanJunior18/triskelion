@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/triskelion/static/js/main.a02977d4.chunk.js",
+    "main.js.map": "/triskelion/static/js/main.a02977d4.chunk.js.map",
+    "runtime-main.js": "/triskelion/static/js/runtime-main.63aef718.js",
+    "runtime-main.js.map": "/triskelion/static/js/runtime-main.63aef718.js.map",
+    "static/js/2.2135902a.chunk.js": "/triskelion/static/js/2.2135902a.chunk.js",
+    "static/js/2.2135902a.chunk.js.map": "/triskelion/static/js/2.2135902a.chunk.js.map",
+    "index.html": "/triskelion/index.html",
+    "static/js/2.2135902a.chunk.js.LICENSE.txt": "/triskelion/static/js/2.2135902a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63aef718.js",
+    "static/js/2.2135902a.chunk.js",
+    "static/js/main.a02977d4.chunk.js"
+  ]
+}
