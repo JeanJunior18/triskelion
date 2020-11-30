@@ -1,14 +1,22 @@
 import { AppBar, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from '@material-ui/core';
-import { Mail as MailIcon, MoveToInbox, Menu as MenuIcon, ShoppingCart, People, MonetizationOn, ShowChart, Settings } from '@material-ui/icons';
+import { Menu as MenuIcon, ShoppingCart, People, MonetizationOn, ShowChart, Settings, ExitToApp } from '@material-ui/icons';
 import clsx from 'clsx';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import useStyles from './styles';
 
 
 
 function DrawerBar ({ title, children }) {
   const classes = useStyles();
+  const history = useHistory()
+
   const [open, setOpen] = useState(false);
+
+  function handleLogout() {
+    localStorage.removeItem('authorization')
+    history.push('/login')
+  }
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -39,7 +47,10 @@ function DrawerBar ({ title, children }) {
             {title}
           </Typography>
         </Toolbar>
+
+        
       </AppBar>
+
       <Drawer
         onMouseOver={()=> setOpen(true)}
         onMouseLeave={()=> setOpen(false)}
@@ -58,19 +69,19 @@ function DrawerBar ({ title, children }) {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-            <ListItem button>
+            <ListItem button onClick={()=>{history.push('/a')}}>
               <ListItemIcon><ShoppingCart /></ListItemIcon>
               <ListItemText>Produtos</ListItemText>
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={()=>{history.push('/')}}>
               <ListItemIcon><People /></ListItemIcon>
               <ListItemText>Clientes</ListItemText>
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={()=>{history.push('/')}}>
               <ListItemIcon><MonetizationOn /></ListItemIcon>
               <ListItemText>Vendas</ListItemText>
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={()=>{history.push('/')}}>
               <ListItemIcon><ShowChart /></ListItemIcon>
               <ListItemText>Vendas</ListItemText>
             </ListItem>
@@ -80,6 +91,10 @@ function DrawerBar ({ title, children }) {
           <ListItem button>
             <ListItemIcon><Settings /></ListItemIcon>
             <ListItemText>Administrativo</ListItemText>
+          </ListItem>
+          <ListItem button onClick={handleLogout}>
+            <ListItemIcon><ExitToApp /></ListItemIcon>
+            <ListItemText>Sair</ListItemText>
           </ListItem>
         </List>
       </Drawer>
