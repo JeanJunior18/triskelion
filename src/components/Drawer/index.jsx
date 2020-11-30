@@ -69,7 +69,7 @@ function DrawerBar ({ title, children }) {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-            <ListItem button onClick={()=>{history.push('/a')}}>
+            <ListItem button onClick={()=>{history.push('/produtos')}}>
               <ListItemIcon><ShoppingCart /></ListItemIcon>
               <ListItemText>Produtos</ListItemText>
             </ListItem>
