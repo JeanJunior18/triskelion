@@ -46,12 +46,7 @@ function Products() {
   }
 
   function deleteProduct () {
-    console.log(selected)
-    selected.rowIds.forEach(e => {
-      api.delete(`/product/${e}`, {headers: getHeaders()})
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-    })
+    alert('Infelizmente Deletar não está disponível')
   }
 
   function RegisterChange (e) {
